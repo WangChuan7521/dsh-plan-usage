@@ -1,0 +1,61 @@
+{
+  "name": "dsh-plan-usage",
+  "version": "1.3.0",
+  "description": "Coding-plan quota for DSH: CommandCode's 5-hour/weekly/monthly windows and OpenCode Go's rolling windows, probed host-side and rendered in the Web GUI.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "tools",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "usage",
+    "quota",
+    "commandcode",
+    "opencode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WangChuan7521/dsh-plan-usage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WangChuan7521/dsh-plan-usage/issues"
+  },
+  "homepage": "https://github.com/WangChuan7521/dsh-plan-usage#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "scripts": {
+    "test": "node tools/test-auth.mjs && node tools/test-client.mjs",
+    "test:live": "node tools/test-host.mjs",
+    "usage": "node tools/usage.mjs"
+  }
+}

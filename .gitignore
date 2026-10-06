@@ -1,0 +1,18 @@
+# Dependencies / build output
+node_modules/
+dist/
+*.tgz
+
+# Local state and any credential material
+.env
+.env.*
+*.pem
+credentials*.yaml
+.credentials.yaml
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

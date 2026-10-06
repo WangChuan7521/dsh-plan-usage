@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "套餐用量",
+    "description": "在 DSH 里查看各提供商的套餐额度：CommandCode 的 5 小时/周/月三条窗口、OpenCode Go 的滚动窗口。密钥只在宿主进程使用，浏览器只读数字。"
+  }
+}

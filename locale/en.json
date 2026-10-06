@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Plan Usage",
+    "description": "Coding-plan quota for every provider this profile talks to: CommandCode's 5-hour/weekly/monthly windows and OpenCode Go's rolling windows. Keys stay in the host process; the browser only reads numbers."
+  }
+}

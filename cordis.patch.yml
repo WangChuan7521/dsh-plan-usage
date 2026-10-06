@@ -1,0 +1,26 @@
+# dsh-plan-usage bundle patch.
+#
+# 一行 insert 即挂载 Host 半身（探测 + /api/dsh-plan-usage/* 路由 + 快照文件）；
+# 浏览器半身由 package.json 的 dsh.client 声明，绑定在 name 为裸包名的这一行上。
+#
+# config 说明：
+#   pollIntervalSec     探测周期（15–3600 秒，默认 60）。
+#   providers.<id>      每个提供商一段，键名即适配器 id（commandcode / opencode-go）：
+#     enabled           置 false 即跳过该提供商（默认 true）。
+#     apiKeyEnv         凭证引用名；省略用适配器自带的默认名。
+#     baseUrl           覆盖接口源；省略用适配器默认值。
+#
+# 三个引用名与各自模型路由的 apiKeyEnv 同名，所以换 key 只需改
+# $DSH_HOME/.credentials.yaml 的 refs 一处。
+- insert:
+    - id: plan-usage
+      name: 'dsh-plan-usage'
+      config:
+        pollIntervalSec: 60
+        providers:
+          commandcode:
+            enabled: true
+            apiKeyEnv: COMMANDCODE_API_KEY
+          opencode-go:
+            enabled: true
+            apiKeyEnv: OPENCODE_GO_API_KEY
